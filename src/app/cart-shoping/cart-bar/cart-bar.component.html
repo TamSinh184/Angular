@@ -1,0 +1,46 @@
+
+<div class="cartItem dropdown show" >
+  <p class="noItem">{{products.length}}</p>
+
+  <div class="cart-info ">
+    <p>No.of Item: <span>
+      {{products.length}}
+    </span>
+    </p>
+    <p>total: <span>
+      {{total() | currency}}
+    </span></p>
+  </div>
+
+  <div class="cart-icon" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" >
+    <img class=" " src="https://res.cloudinary.com/sivadass/image/upload/v1493548928/icons/bag.png" alt="Cart">  </div>
+  <div class="cart-previewdropdown-menu" class="dropdown-menu dropdown-menu-right">
+    <ng-template #displayCart>
+        <div class="cart-dropdown" *ngFor="let item of products; let i = index">
+
+            <div class=" img-cart" >
+              <img src="{{item?.image}}" alt="">
+            </div>
+        
+            <div class=" content-cart">
+              <p>{{item?.name}}</p>
+              <p>{{item?.price | currency}}</p>
+            </div>
+            <div class="quatity">
+              <p>count {{item?.count}}</p>
+              <h5 class="total">{{item?.count*item?.price |currency}}</h5>
+            </div>
+            <button class=" btn btn-danger"  (click)="removeItem(item, i)">X</button>
+
+        </div>
+        <a class="btn btn-warning  btn-lg btn-block" (click)="sendCheckout()"  role="button">PROCEED TO CHECK OUT</a>
+
+    </ng-template>
+
+      <div class="empty-cart" *ngIf="products.length ==0; else displayCart">
+        <img src="https://res.cloudinary.com/sivadass/image/upload/v1495427934/icons/empty-cart.png" alt="">
+        <h3>No Product</h3>
+      </div>
+  </div>
+</div>
+

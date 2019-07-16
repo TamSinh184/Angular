@@ -1,0 +1,54 @@
+
+<div class="container_edit-product card bg-light container" >
+  <div class="card-body head-edit">
+    <button class="btn btn-info" (click)="onBack()" type="button">
+        <i class="material-icons"> arrow_back</i>
+    </button>
+    <h2 class="card-title">YOUR SHOPPING BAG</h2>
+
+    <button class="btn btn-warning" type="button" [routerLink]="['/index']" routerLinkActive="router-link-active" >add product</button>
+  </div>
+
+
+  <div class="row"  >
+    <div class="col-8">
+        <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Image</th>
+                <th scope="col">Name</th>
+                <th scope="col">Price</th>
+                <th scope="col">Count</th>
+                <th scope="col">Total</th>
+                <th scope="col">Delete</th>
+
+              </tr>
+            </thead>
+            <tbody *ngFor="let item of productCarts; let i = index">
+              <tr>
+                <th scope="row">{{i +1}}</th>
+                <td><img src="{{item.image}}" [ngStyle]="{'width': '50px'}" alt=""></td>
+                <td>{{item.name}}</td>
+                <td>{{item.price | currency}}</td>
+                <td>{{item.count}}</td>
+                <td>{{(item.count)*(item.price) | currency}}</td>
+                <td><button class="btn btn-danger" (click)="delete(item, i)" type="button">X</button></td>
+              </tr>
+   
+            </tbody>
+          </table>
+    </div>
+    <div class="col-4">
+        <div class="card" style="width: 18rem;">
+            <div class="card-header">
+              <h4>Subtotal({{productCarts.length}}items)</h4>
+            </div>
+            <h3 [ngStyle]="{'color': 'red', 'text-align':'center'}">{{totalProducts()| currency}}</h3>
+          </div>
+    </div>
+
+
+  </div>
+
+</div>

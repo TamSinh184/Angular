@@ -1,0 +1,18 @@
+.footer {
+  display: flex;
+  justify-content: space-around;
+  font-size: 14px;
+  text-align: center;
+  padding: 32px;
+  background: rb(221, 221, 221);
+  strong {
+    color: gray-medium;
+  }
+  .footer-links {
+    margin-bottom: 24px;
+    a {
+      margin: 0 8px;
+      color: gray-medium;
+    }
+  }
+}

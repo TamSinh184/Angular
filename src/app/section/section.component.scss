@@ -1,0 +1,160 @@
+@mixin styleAddNumber {
+    cursor: pointer;
+    font-family: Roboto;
+    height: 24px;
+    width: 24px;
+    text-align: center;
+    box-sizing: border-box;
+    border-radius: 50%;
+    text-decoration: none;
+    color: inherit;
+    font-size: 24px;
+    line-height: 22px;
+    border: 1px solid green;
+}
+
+@mixin  hoverAddNumber {
+    background: rgb(33, 136, 56);
+    color: white;
+}
+
+.content-wrapper {
+    background-color: rgb(245, 245, 245);
+
+    .content-product-list {
+        display: flex;
+        width: 100%;
+        .menu-sidebar {
+            width: 15%;
+            .content-sidebar{
+                list-style-type: none;
+                line-height: 30px;
+                padding-left: 0;
+                margin-top: 100px;
+                font-family: inherit;
+
+                .item_menu-sidebar {
+                    color: green;
+                    border-bottom: 1px solid green;
+                    margin-right: 20px;
+                    
+                    .price {
+
+                    }
+                    .price:hover {
+                        cursor: pointer;
+                        color: rgb(9, 85, 9);
+                        font-weight: 500;
+                    }
+
+                    .items-price, .items-name {
+                        .item-price, .item-name{
+                            list-style-type: none;
+                            border-top: 1px solid green;
+                        }
+                    }
+                }
+            }
+        }
+        .products-list{
+            width: 85%;
+            margin-top: 80px;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+    
+            .product {
+                width: 23%;
+                text-align: center;
+                background-color: white;
+                margin-top: 20px;
+                overflow: hidden;
+                transition: width 2s;
+    
+                .product-img {
+                    img {
+                        width: 100%;
+                        transition: transform 0.5s;
+                    }
+                }
+                .product-name{
+                    font-size: 16px;
+                    color: grey;
+                }
+    
+                .product-price {
+                    font-size: 20px;
+                    color: darkslategray;
+                }
+    
+                .add-number{
+                    text-align: center;
+    
+                    .decrement {
+                        padding: 0 12px;
+    
+                        @include styleAddNumber;
+                    }
+    
+                    .decrement:hover{
+                        @include hoverAddNumber;
+                    }
+                    .quantity {
+                        margin: 10px;
+                        text-align: center;
+                        width: 50px
+                    }
+                    .increment {
+                        padding: 0 9px;
+    
+                        @include styleAddNumber;
+    
+                    }
+    
+                    .increment:hover {
+                        @include hoverAddNumber;
+                    }
+                }
+    
+                .add-cart {
+                    text-align: center;
+                    width: 60%;
+                    margin-bottom: 10px;
+                }
+            }
+            .product:hover {
+                cursor: pointer;
+                -webkit-box-shadow: 1px 1px 3px 2px rgba(0,0,0,0.2);
+                -moz-box-shadow: 1px 1px 3px 2px rgba(0,0,0,0.2);
+                box-shadow: 1px 1px 3px 2px rgba(0,0,0,0.2);
+                img {
+                    transform: scale(0.9);
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .products-list {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+
+        .product {
+            width: 33% !important;
+        }
+    }
+  }
+
+  @media only screen and (max-width: 460px) {
+    .products-list {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+
+        .product {
+            width: 100% !important;
+        }
+    }
+  }

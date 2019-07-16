@@ -1,0 +1,55 @@
+<div class="container_add-product card container-fluid" >
+  
+  <div class="card-body head-add">
+    <button class="btn btn-light" type="button" [routerLink]="['/product']" routerLinkActive="router-link-active" >
+        <i class="material-icons"> arrow_back</i>
+    </button>
+    <h5 class="card-title">New Product</h5>
+    <button class="btn btn-info" type="button" (click)="onAddProduct()">SAVE</button>
+  </div>
+  
+  <ul class="list-group list-group-flush">
+
+    <li class="list-group-item">
+        <form>
+            <div class="form-group row">
+              <label for="exampleFormControlFile1" class="col-sm-2 col-form-label">Add Image</label>
+              <div class="col-sm-10">
+                  <input type="file" class="form-control-file" id="exampleFormControlFile1"  (change)="onFileSelected($event)">
+                  <img  id="imageAdd" src="" height="200" alt="Image preview...">
+                </div>
+
+            </div>
+            <div class="form-group row">
+              <label for="formGroupExampleInput" class="col-sm-2 col-form-label">Name</label>
+              <div class="col-sm-10">
+                  <input type="text" class="form-control" id="formGroupExampleInput" [(ngModel)]="product.name" [ngModelOptions]="{standalone: true}" placeholder="Name">
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="formGroupExampleInput" class="col-sm-2 col-form-label">Price</label>
+                <div class="col-sm-10">
+                    <input type="number" class="form-control" id="formGroupExampleInput" [(ngModel)]="product.price" [ngModelOptions]="{standalone: true}" placeholder="Price">
+                  </div>
+            </div>
+            <div class="form-group row">
+                <label for="inputState" class="col-sm-2 col-form-label">Category</label>
+                <div class="col-sm-10">
+                    <select id="inputState" class="form-control" [(ngModel)]="product.category" [ngModelOptions]="{standalone: true}">
+                        <option selected>Fruits</option>
+                        <option>Nuts</option>
+                        <option>Vegetables</option>
+
+                    </select>
+                </div>
+            </div>
+      
+        </form>
+    </li>
+    
+  </ul>
+  <div class="card-body">
+    <a href="#" class="card-link">Back</a>
+    <a href="#" class="card-link">Save</a>
+  </div>
+</div>

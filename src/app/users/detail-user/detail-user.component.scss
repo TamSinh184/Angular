@@ -1,0 +1,30 @@
+.container_edit-product {
+    margin-top: 120px;
+    .head-edit{
+        display: flex;
+        justify-content: space-between;
+    }
+    .img-detail {
+        img {
+            width: 100%;
+        }
+    }
+
+    .item-product {
+        border-bottom: 1px solid grey;
+        margin: 20px;
+        .content-item {
+            color: grey;
+        }
+    }
+
+    .item-product-last {
+        border-bottom: none;
+        margin: 20px;
+        padding: 30px 0;
+
+        button {
+            width: 50%;
+        }
+    }
+}

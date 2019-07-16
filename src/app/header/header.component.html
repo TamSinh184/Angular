@@ -1,0 +1,46 @@
+
+<div class="fix-deader">
+  <div class="content-header container">
+    <div class="branch">
+      <img src="https://res.cloudinary.com/sivadass/image/upload/v1493547373/dummy-logo/Veggy.png" alt="logo" class="logo">
+    </div>
+    <div class="main-menu">
+      <li class="item-menu ">
+        <a [routerLink]="['/index']" routerLinkActive="router-link-active">HOME</a>
+      </li>
+      <li class="item-menu">
+        <a [routerLink]="['/product']" routerLinkActive="router-link-active" >VEGETABLE</a>
+      </li>
+      <li class="item-menu">
+        <a [routerLink]="['/user']" routerLinkActive="router-link-active">USER</a>
+      </li>
+    </div>
+    <div class="search">
+
+        <form class="form-search search-mobile">
+          <input class="text-search" placeholder="Search for Vegetables and Fruits"  [(ngModel)]="nameSearch" [ngModelOptions]="{standalone: true}" type="search" aria-label="Search">
+          <button class="search-btn " (click)="searchProduct(nameSearch)"  type="submit">Search</button>
+        </form>
+
+
+    </div>
+    <div class="cart" >
+            <!-- [prodInput]="prodHeader" -->
+
+      <cart-bar></cart-bar>
+    </div>
+  </div>
+</div>
+
+<!-- <section
+#child
+[childMessage]="nameSearch"
+[childCount] = "count"
+
+(messageEvent)="receiveMessage($event)"
+(productEvent)="receiveProduct($event)"
+(priceEvent)="receivicePrice($event)"
+
+>
+
+</section> -->

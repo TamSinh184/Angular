@@ -1,0 +1,62 @@
+
+  <div class="container_edit-product card bg-light container-fluid" >
+      <div class="card-body head-edit">
+        <button class="btn btn-info" (click)="onBack()" type="button">
+            <i class="material-icons"> arrow_back</i>
+        </button>
+        <h2 class="card-title">{{product.name}}</h2>
+        <button class="btn btn-warning" type="button" [routerLink]="['/product/add']" routerLinkActive="router-link-active" >Add Product</button>
+      </div>
+
+
+      <div class="row">
+      <div class="col-5 img-detail">
+        <img src="{{product.image}}" alt="">
+      </div>
+      <div class="col-7">
+        <div class="row item-product">
+          <div class="col">
+              <h4>ID : </h4>
+
+          </div>
+          <div class="col content-item">
+            <h4>{{product.id}}</h4>
+          </div>
+        </div>
+        <div class="row item-product">
+          <div class="col">
+              <h4>Name: </h4>
+          </div>
+          <div class="col content-item">
+            <h4>{{product.name}}</h4>
+          </div>
+        </div>
+        <div class="row item-product">
+          <div class="col">
+              <h4>Price: </h4>
+          </div>
+          <div class="col content-item">
+          <h4>{{product.price | currency}}</h4>
+        </div>
+        </div>
+        <div class="row item-product">
+          <div class="col">
+              <h4>Category: </h4>
+          </div>
+          <div class="col content-item">
+              <h4>{{product.category}}</h4>
+          </div>
+        </div>
+        <div class="row item-product-last">
+          <div class="col">
+            <button class="btn btn-success btn-lg" [routerLink]="['/product', product.id, 'edit']" routerLinkActive="router-link-active" type="button">Edit</button>
+          </div>
+          <div class="col content-item">
+            <button class="btn btn-danger btn-lg" (click)="delete(product.id) " type="button">Delete</button>
+          </div>
+      </div>
+      </div>
+
+    </div>
+
+    </div>
