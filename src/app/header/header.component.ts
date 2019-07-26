@@ -45,5 +45,6 @@ export class HeaderComponent implements OnInit{
 
   showSearch() {
     this.isShowSearch = !this.isShowSearch;
+    console.log(this.isShowSearch);
   }
 }
